@@ -1,0 +1,38 @@
+{
+  "name": "@thtliife/eslint-staged-ignored-filter",
+  "version": "0.0.0-semantic-release",
+  "description": "A small command line utility and api to output staged git files without eslint excluded files",
+  "keywords": [
+    "eslint",
+    "ignore",
+    "ignored",
+    "commitlint",
+    "commitizen",
+    "lint-staged"
+  ],
+  "homepage": "https://github.com/thtliife/repo-tools/tree/main/packages/eslint-staged-ignored-filter",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/thtliife/repo-tools.git",
+    "directory": "packages/eslint-staged-ignored-filter"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "thtliife",
+    "email": "9210782+thtliife@users.noreply.github.com",
+    "url": "https://github.com/thtliife"
+  },
+  "type": "commonjs",
+  "main": "index.js",
+  "bin": {
+    "esif": "lib/cli.js",
+    "eslint-staged-ignored-filter": "lib/cli.js"
+  },
+  "peerDependencies": {
+    "eslint": ">=7"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
+  }
+}
