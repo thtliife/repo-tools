@@ -1,0 +1,2 @@
+"use strict";Object.defineProperty(exports,"filterIgnored",{enumerable:true,get:()=>filterIgnored});const _isIgnored=require("./is-ignored");const removeEslintIgnoredFiles=async file=>!await (0,_isIgnored.isIgnored)(file)&&file;const filterIgnored=async files=>{const filesArray=typeof files==="string"?files.split(" "):files;const ignoredFiles=await Promise.all(filesArray.map(await removeEslintIgnoredFiles));return await ignoredFiles.filter(Boolean)};
+//# sourceMappingURL=filter-ignored.js.map

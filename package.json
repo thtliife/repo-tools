@@ -1,0 +1,44 @@
+{
+  "name": "repo-tools",
+  "version": "0.0.0-semantic-release",
+  "private": true,
+  "license": "MIT",
+  "engines": {
+    "npm": ">=8.11.0",
+    "node": ">=16.15.1"
+  },
+  "scripts": {
+    "postinstall": "git config core.hookspath .githooks"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.3.0",
+    "@commitlint/config-conventional": "^17.3.0",
+    "@commitlint/prompt-cli": "^17.3.0",
+    "@commitlint/types": "^17.0.0",
+    "@nrwl/cli": "15.2.4",
+    "@nrwl/eslint-plugin-nx": "^15.2.4",
+    "@nrwl/jest": "15.2.4",
+    "@nrwl/js": "15.2.4",
+    "@nrwl/workspace": "15.2.4",
+    "@thtliife/eslint-staged-ignored-filter": "file:tools/unplugged/eslint-staged-ignored-filter",
+    "@types/eslint": "^8.4.10",
+    "@types/jest": "28.1.1",
+    "@types/node": "16.11.7",
+    "@typescript-eslint/eslint-plugin": "^5.45.0",
+    "@typescript-eslint/parser": "^5.45.0",
+    "devmoji": "^2.3.0",
+    "eslint": "^8.29.0",
+    "jest": "28.1.1",
+    "jest-environment-jsdom": "28.1.1",
+    "nx": "15.2.4",
+    "prettier": "^2.6.2",
+    "semantic-release-npm-github-publish": "^1.5.4",
+    "semantic-release-plus": "^20.0.0",
+    "ts-jest": "28.0.5",
+    "ts-node": "10.9.1",
+    "typescript": "~4.8.2"
+  }
+}

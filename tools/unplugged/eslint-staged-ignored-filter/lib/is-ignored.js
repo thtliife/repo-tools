@@ -1,0 +1,2 @@
+"use strict";Object.defineProperty(exports,"isIgnored",{enumerable:true,get:()=>isIgnored});const _eslint=require("eslint");const eslint=new _eslint.ESLint;const isIgnored=async file=>{const res=await eslint.isPathIgnored(file);return res};
+//# sourceMappingURL=is-ignored.js.map

@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../../../packages/eslint-staged-ignored-filter/lib/index.ts"],"sourcesContent":["export * from './filter-ignored';\nexport * from './is-ignored';\n"],"names":[],"mappings":"AAAA,iCAAc,iDACA"}

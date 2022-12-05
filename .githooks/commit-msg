@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+_msg="$1"
+_package_manager=$(type "yarn" >/dev/null 2>/dev/null && echo "yarn --silent" || echo npx)
+$_package_manager commitlint --edit "$_msg" && $_package_manager devmoji --edit --lint
+
+
+COMMITLINT_EXIT="$?"
+
+if [[ "${COMMITLINT_EXIT}" == 0 ]]; then
+  echo ""
+else
+  printf "\n\033[31mCOMMIT FAILED:\033[0m Fix your commit message and try again\n"
+  exit $COMMITLINT_EXIT
+fi
