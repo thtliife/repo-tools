@@ -23,7 +23,7 @@
     "@nrwl/jest": "15.2.4",
     "@nrwl/js": "15.2.4",
     "@nrwl/workspace": "15.2.4",
-    "@thtliife/eslint-staged-ignored-filter": "file:tools/unplugged/eslint-staged-ignored-filter",
+    "@thtliife/eslint-staged-ignored-filter": "^1.0.1",
     "@types/eslint": "^8.4.10",
     "@types/jest": "28.1.1",
     "@types/node": "16.11.7",

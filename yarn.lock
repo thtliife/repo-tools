@@ -1527,8 +1527,10 @@
   dependencies:
     "@sinonjs/commons" "^1.7.0"
 
-"@thtliife/eslint-staged-ignored-filter@file:tools/unplugged/eslint-staged-ignored-filter":
-  version "0.0.0-alpha"
+"@thtliife/eslint-staged-ignored-filter@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@thtliife/eslint-staged-ignored-filter/-/eslint-staged-ignored-filter-1.0.1.tgz#564b5da9737cb4b34f91f3f0599a34157cd47a8c"
+  integrity sha512-0BPsQ6cmI99iAjSX4fpRMGPFeq1jKr9sDztW+SzyoFcn/MsLlrhyfZWDO9waAvctOcikm4A4u/gF8LJzPiAZ0g==
 
 "@tootallnate/once@1":
   version "1.1.2"
