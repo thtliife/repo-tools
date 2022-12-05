@@ -1,0 +1,96 @@
+name: Lint & test
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+  pull_request:
+    branches:
+      - main
+    types:
+      - opened
+      - edited
+      - reopened
+      - ready_for_review
+
+jobs:
+  main:
+    if: startsWith(github.event.head_commit.message, 'Merge pull request') != true
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version:
+          - 18
+          - 19
+    defaults:
+      run:
+        shell: bash
+        working-directory: ${{ github.workspace }}
+
+    steps:
+      - name: Checkout all commits [default branch]
+        if: ${{ github.event_name != 'pull_request' }}
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Checkout all commits [pull request]
+        if: ${{ github.event_name == 'pull_request' }}
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          fetch-depth: 0
+
+      - name: Derive appropriate SHAs for base and head for `nx affected` commands
+        id: set-shas
+        uses: nrwl/nx-set-shas@v3
+        with:
+          set-environment-variables-for-job: false
+
+      - name: Use Node.js v${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Get yarn cache path
+        id: get-cache-dir
+        run: echo "cache-dir=$(yarn --silent cache dir)" >> $GITHUB_OUTPUT
+
+      - name: Use the node_modules cache if available
+        uses: actions/cache@v3
+        with:
+          path: ${{ steps.get-cache-dir.outputs.cache-dir }}
+          key: ${{ runner.os }}-node-${{ matrix.node-version }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-node-${{ matrix.node-version }}-
+
+      - name: Install packages
+        run: |
+          echo "Running yarn install --frozen-lockfile"
+          yarn install --frozen-lockfile
+
+      - name: Lint the workspace setup
+        run: |
+          echo "## Lint the workspace files" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          (yarn --silent nx workspace-lint && echo "✅ Workspace lint passed") >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+
+      - name: Check formatting of code in the workspace
+        run: |
+          echo "## Check formatting of files in the workspace" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          (yarn --silent nx format:check --base=${{ steps.set-shas.outputs.base }} --head=${{ steps.set-shas.outputs.head }} && echo "✅ Format check passed") >> $GITHUB_STEP_SUMMARY
+
+      - name: Lint affected code
+        run: |
+          echo "## Run eslint on all affected code" >> $GITHUB_STEP_SUMMARY
+          echo "## >> $GITHUB_STEP_SUMMARY"
+          yarn --silent nx affected --base=${{ steps.set-shas.outputs.base }} --head=${{ steps.set-shas.outputs.head }} --target=lint >> $GITHUB_STEP_SUMMARY
+
+      - name: Test affected code
+        run: |
+          echo "## Test results" >> $GITHUB_STEP_SUMMARY
+          yarn  --silent nx affected --base=${{ steps.set-shas.outputs.base }} --head=${{ steps.set-shas.outputs.head }} --target=test >> $GITHUB_STEP_SUMMARY
