@@ -1,0 +1,50 @@
+{
+  "name": "eslint-staged-ignored-filter",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/eslint-staged-ignored-filter/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/eslint-staged-ignored-filter",
+        "main": "packages/eslint-staged-ignored-filter/src/index.ts",
+        "tsConfig": "packages/eslint-staged-ignored-filter/tsconfig.lib.json",
+        "assets": ["packages/eslint-staged-ignored-filter/*.md"],
+        "rootDir": "packages/eslint-staged-ignored-filter/src"
+      }
+    },
+    "publish": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "node tools/scripts/publish.mjs eslint-staged-ignored-filter {args.ver} {args.tag}"
+      },
+      "dependsOn": ["build"]
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/eslint-staged-ignored-filter/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "packages/eslint-staged-ignored-filter/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "release": {
+      "executor": "nx:run-commands",
+      "outputs": [],
+      "options": {
+        "command": "yarn semantic-release-plus --extends ./packages/eslint-staged-ignored-filter/release.config.js",
+        "parallel": false
+      }
+    }
+  },
+  "tags": []
+}
