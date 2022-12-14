@@ -11,8 +11,6 @@ This readme will be updated as new features / packages are added.
 
 Packages in this repository:
 
-_none yet_
-
 - [eslint-staged-ignored-filter](https://github.com/repo-tools/blob/main/packages/eslint-staged-ignored-filter)
 
 ## Contributing
