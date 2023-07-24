@@ -27,7 +27,7 @@ const config = {
       {
         assets: [`${srcRoot}/package.json`, `${srcRoot}/CHANGELOG.md`],
         message:
-          `chore(release): release ${name} ` +
+          `chore(release): publish version ${name} ` +
           '${nextRelease.version} [skip ci]\n\n${nextRelease.notes}'
       }
     ]
