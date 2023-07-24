@@ -1,4 +1,4 @@
-name: Publish package to GitHub Packages
+name: Publish esif package to GitHub Packages
 on:
   release:
     types: [published]
@@ -8,11 +8,8 @@ on:
         description: 'Tag to publish'
         required: true
 jobs:
-  publish:
+  build-and-publish:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./dist/packages/eslint-staged-ignored-filter
     permissions:
       contents: read
       packages: write
@@ -28,8 +25,9 @@ jobs:
           registry-url: 'https://npm.pkg.github.com'
           # Defaults to the user or organization that owns the workflow file
       - run: yarn install
-      - run: yarn build
+      - run: yarn nx build eslint-staged-ignored-filter
       - run: yarn publish
+        working-directory: ./dist/packages/eslint-staged-ignored-filter
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
