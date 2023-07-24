@@ -2,7 +2,8 @@ const name = 'eslint-staged-ignored-filter';
 const srcRoot = `packages/${name}`;
 
 const config = {
-  extends: '../../release.config.js',
+  extends: ['../../release.config.js', 'semantic-release-npm-github-publish'],
+  branch: 'main',
   pkgRoot: `dist/${srcRoot}`,
   tagFormat: name + '-v${version}',
   commitPaths: [`${srcRoot}/*`],
