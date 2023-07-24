@@ -30,7 +30,8 @@ const config = {
           `chore(release): publish version ${name} ` +
           '${nextRelease.version} [skip ci]\n\n${nextRelease.notes}'
       }
-    ]
+    ],
+    '@semantic-release/github'
   ]
 };
 
