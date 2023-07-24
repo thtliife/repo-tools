@@ -19,7 +19,8 @@ const config = {
     [
       '@semantic-release/npm',
       {
-        pkgRoot: `dist/${srcRoot}`
+        pkgRoot: `dist/${srcRoot}`,
+        npmPublish: true
       }
     ],
     [

@@ -102,4 +102,5 @@ jobs:
           NPM_TOKEN: ${{ secrets.NPM_PKG_REPO_TOKEN }}
         run: |
           echo "## Release affected libs"
-          yarn --silent nx affected --base=$BEFORE_SHA --target release
+          NPM_CONFIG_REGISTRY="https://registry.npmjs.org" yarn --silent nx affected --base=$BEFORE_SHA --target release
+          NPM_CONFIG_REGISTRY="https://npm.pkg.github.com" yarn --silent nx affected --base=$BEFORE_SHA --target release
