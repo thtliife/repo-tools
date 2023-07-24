@@ -112,5 +112,3 @@ Run `yarn nx build eslint-staged-ignored-filter` to build the library.
 ## Running unit tests
 
 Run `yarn nx test eslint-staged-ignored-filter` to execute the unit tests via [Jest](https://jestjs.io).
-
----
