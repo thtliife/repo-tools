@@ -1,7 +1,5 @@
 import type { UserConfig } from '@commitlint/types';
-import {
-  ProjectConfiguration
-} from 'nx/src/config/workspace-json-project-json';
+import { ProjectConfiguration } from 'nx/src/config/workspace-json-project-json';
 import { Workspaces } from 'nx/src/config/workspaces';
 
 /**
@@ -57,7 +55,36 @@ export const config: UserConfig = {
         2,
         'always',
         [...packages, 'release']
-      ])
+      ]),
+    'type-case': [2, 'always', 'lower-case'],
+    'type-empty': [2, 'never'],
+    'type-enum': [
+      2,
+      'always',
+      [
+        'add',
+        'breaking',
+        'build',
+        'chore',
+        'ci',
+        'config',
+        'docs',
+        'downgrade',
+        'egg',
+        'feat',
+        'fix',
+        'i18n',
+        'perf',
+        'refactor',
+        'release',
+        'remove',
+        'revert',
+        'security',
+        'style',
+        'test',
+        'upgrade'
+      ]
+    ]
   },
   helpUrl:
     '\n    This repository uses conventional commits. See: https://www.conventionalcommits.org \n    The specific configuration is as per: https://github.com/conventional-changelog/commitlint/tree/master/@commitlint/config-conventional#commitlintconfig-conventional'
