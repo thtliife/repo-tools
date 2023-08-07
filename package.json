@@ -1,6 +1,6 @@
 {
   "name": "repo-tools",
-  "version": "0.0.0-semantic-release",
+  "version": "1.0.2",
   "private": true,
   "license": "MIT",
   "engines": {
@@ -29,7 +29,7 @@
     "@semantic-release/github": "^8.0.7",
     "@semantic-release/npm": "^9.0.1",
     "@semantic-release/release-notes-generator": "^10.0.3",
-    "@thtliife/eslint-staged-ignored-filter": "^1.0.1",
+    "@thtliife/eslint-staged-ignored-filter": "^1.0.0",
     "@types/eslint": "^8.4.10",
     "@types/jest": "28.1.1",
     "@types/node": "16.11.7",

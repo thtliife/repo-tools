@@ -8,7 +8,7 @@ on:
         description: 'Tag to publish'
         required: true
 jobs:
-  build-and-publish:
+  build:
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -16,18 +16,21 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       # Setup .npmrc file to publish to GitHub Packages
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 8.6.12
       - uses: actions/setup-node@v3
         with:
           node-version: '18.x'
-          cache: 'yarn'
-          cache-dependency-path: ./yarn.lock
+          cache: 'pnpm'
+          cache-dependency-path: ./pnpm-lock.yaml
           always-auth: true
           registry-url: 'https://npm.pkg.github.com'
           # Defaults to the user or organization that owns the workflow file
-      - run: yarn install
-      - run: yarn nx build eslint-staged-ignored-filter
-      - run: yarn publish
-        working-directory: ./dist/packages/eslint-staged-ignored-filter
+      - run: pnpm install
+      - run: pnpm build eslint-staged-ignored-filter
+      - run: pnpm publish
+        working-directory: ./dist/libs/git
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
           NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}

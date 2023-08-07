@@ -1,6 +1,6 @@
 {
   "name": "@thtliife/eslint-staged-ignored-filter",
-  "version": "0.0.0-semantic-release",
+  "version": "1.0.2",
   "description": "A small command line utility and api to output staged git files without eslint excluded files",
   "keywords": [
     "eslint",
