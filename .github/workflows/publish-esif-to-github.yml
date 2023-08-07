@@ -28,7 +28,7 @@ jobs:
           registry-url: 'https://npm.pkg.github.com'
           # Defaults to the user or organization that owns the workflow file
       - run: pnpm install
-      - run: pnpm build eslint-staged-ignored-filter
+      - run: pnpm nx build eslint-staged-ignored-filter
       - run: pnpm publish
         working-directory: ./dist/libs/git
         env:

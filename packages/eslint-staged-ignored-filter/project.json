@@ -5,14 +5,15 @@
   "projectType": "library",
   "targets": {
     "build": {
-      "executor": "@nrwl/js:tsc",
+      "executor": "@nx/js:tsc",
       "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/packages/eslint-staged-ignored-filter",
         "main": "packages/eslint-staged-ignored-filter/src/index.ts",
         "tsConfig": "packages/eslint-staged-ignored-filter/tsconfig.lib.json",
         "assets": ["packages/eslint-staged-ignored-filter/*.md"],
-        "rootDir": "packages/eslint-staged-ignored-filter/src"
+        "rootDir": "packages/eslint-staged-ignored-filter/src",
+        "updateBuildableProjectDepsInPackageJson": true
       }
     },
     "publish": {
@@ -30,7 +31,7 @@
       }
     },
     "test": {
-      "executor": "@nrwl/jest:jest",
+      "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
         "jestConfig": "packages/eslint-staged-ignored-filter/jest.config.ts",
