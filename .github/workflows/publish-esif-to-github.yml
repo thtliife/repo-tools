@@ -27,6 +27,14 @@ jobs:
           always-auth: true
           registry-url: 'https://npm.pkg.github.com'
           # Defaults to the user or organization that owns the workflow file
+      - name: Set token config
+        run: |
+          echo "//npm.pkg.github.com/:_authToken=${{secrets.NPM_AUTH_TOKEN}}" > .npmrc
+          echo "@thtliife=https://npm.pkg.github.com/" >> .npmrc
+          echo "_auth=${{secrets.NPM_AUTH_TOKEN}}" >> .npmrc
+          echo "always-auth=true" >> .npmrc
+        env:
+          secrets.NPM_TOKEN: ${{secrets.NPM_AUTH_TOKEN}}
       - run: pnpm install
       - run: pnpm nx build eslint-staged-ignored-filter
       - run: pnpm publish
