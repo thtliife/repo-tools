@@ -47,8 +47,8 @@ devDependencies:
     specifier: ^9.0.4
     version: 9.0.4(semantic-release@21.0.7)
   '@semantic-release/npm':
-    specifier: ^9.0.2
-    version: 9.0.2(semantic-release@21.0.7)
+    specifier: ^10.0.4
+    version: 10.0.4(semantic-release@21.0.7)
   '@semantic-release/release-notes-generator':
     specifier: ^11.0.4
     version: 11.0.4(semantic-release@21.0.7)
