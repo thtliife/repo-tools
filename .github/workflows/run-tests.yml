@@ -151,7 +151,7 @@ jobs:
       max-parallel: 4
       # One job for each different project and node version
       matrix:
-        node: ['17.9.1', '18.17.0']
+        node: ['18.17.0', '20.5.0']
         projectName: ${{fromJson(needs.get-affected.outputs.test-e2e)}}
     env:
       NODE: ${{ matrix.node }}
