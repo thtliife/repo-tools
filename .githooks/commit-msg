@@ -1,8 +1,6 @@
 #!/usr/bin/env bash
 _msg="$1"
-_package_manager=$(type "yarn" >/dev/null 2>/dev/null && echo "yarn --silent" || echo npx)
-$_package_manager commitlint --edit "$_msg" && $_package_manager devmoji --edit --lint
-
+node_modules/.bin/commitlint --edit "$_msg"
 
 COMMITLINT_EXIT="$?"
 

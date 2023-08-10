@@ -1,41 +1,33 @@
 #!/usr/bin/env bash
 
+
 # Get the currently staged files
 declare -a STAGED_FILES=($(git diff --cached --name-only --diff-filter=ACMR | sed 's| |\\ |g'))
 
 # Quit if nothing is staged
 [ -z "$STAGED_FILES" ] && exit 0
 
-# Determine the package runner via lock files, falling back to "npx"
-# yarn outputs extra text on running packages, so need to silence that with --silent option
-[ -z "$PACKAGE_RUNNER" ] && [ -f "./yarn.lock" ] && PACKAGE_RUNNER="yarn --silent"
-[ -z "$PACKAGE_RUNNER" ] && [ -f "./pnpm-lock.yaml" ] && PACKAGE_RUNNER="pnpm"
-[ -z "$PACKAGE_RUNNER" ] && [ -f "./package-lock.json" ] && PACKAGE_RUNNER="npx"
-[ -z "$PACKAGE_RUNNER" ] && PACKAGE_RUNNER="npx"
-
-ESLINT_INSTALLED=$(npm --silent list eslint >/dev/null && echo true || echo false)
+# Check if eslint is installed
+ESLINT_INSTALLED=$(node_modules/.bin/eslint --version &>/dev/null && echo true || echo false)
 
 # Lint staged files with eslint if it is installed in the project
 if [ "$ESLINT_INSTALLED" = "true" ]; then
   # Filter the staged files by file extension that we want to lint
   STAGED_FILES_TO_LINT=$((IFS=$'\n' && echo "${STAGED_FILES[*]}") | grep -E '.*\.(js|jsx|tsx|ts)$')
 
-  # Get files that eslint can process, which will not throw "Ignored" warnings
-  LINTABLE_FILES=$($PACKAGE_RUNNER esif ${STAGED_FILES_TO_LINT})
-
   # Exit if no staged files are lintable
-  [ -z "$LINTABLE_FILES" ] && exit 0
+  [ -z "$STAGED_FILES_TO_LINT" ] && exit 0
 
   echo ""
   echo Running eslint on staged files...
   # Run eslint using the detected package runner
-  $PACKAGE_RUNNER eslint $LINTABLE_FILES --max-warnings 0 --report-unused-disable-directives #--fix
+  $(.githooks/eslint.js $STAGED_FILES_TO_LINT --max-warnings 0 --report-unused-disable-directives)
 
   # Get the eslint exit code
   ESLINT_EXIT="$?"
 
   # Re-add files since they may have been fixed
-  # Remove the next line if you are not running eslint with the --fix option
+  # Uncomment the next line if you are running eslint with the --fix option
   # git add "${LINTABLE_FILES}"
 
   # Test the eslint exit code for non-zero status
@@ -47,12 +39,15 @@ if [ "$ESLINT_INSTALLED" = "true" ]; then
   fi
 fi
 
-
+# Check if prettier is installed
+PRETTIER_INSTALLED=$(prettier --version &>/dev/null && echo true || echo false)
 # Prettify all selected files
-if [ -f "./node_modules/.bin/prettier" ]; then
+if [ "$PRETTIER_INSTALLED" = "true" ]; then
+  STAGED_FILES_TO_FORMAT=$((IFS=$'\n' && echo "${STAGED_FILES[*]}") | grep -E '.*\.(js|jsx|tsx|ts|json)$')
+
 echo ""
 echo Running prettier on staged files...
-  $PACKAGE_RUNNER prettier $STAGED_FILES_TO_LINT --ignore-unknown --write --loglevel warn
+  node_modules/.bin/prettier $STAGED_FILES_TO_FORMAT --ignore-unknown --write --loglevel warn
   PRETTIER_EXIT="$?"
 
   if [[ "${PRETTIER_EXIT}" == 0 ]]; then
@@ -63,7 +58,7 @@ echo Running prettier on staged files...
   fi
 
   # Add back the modified/prettified files to staging
-  echo "$STAGED_FILES_TO_LINT" | xargs git add
+  echo "$STAGED_FILES_TO_FORMAT" | xargs git add
 fi
 
 exit 0
