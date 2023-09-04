@@ -14,43 +14,28 @@ updates:
       interval: 'daily'
     ignore:
       - dependency-name: 'prettier'
-        update-types: ['version-update:semver-major']
-      - dependency-name: '@storybook/*'
-      - dependency-name: 'storybook'
-      - dependency-name: '@nx/*'
-      - dependency-name: 'nx'
+        update-types: ['version-update:semver-major'] # ignore major updates until @nrwl/nx adds support for prettier v3
+      - dependency-name: '@storybook/*' # ignore storybook updates (should be managed by `npx storybook@latest upgrade`)
+      - dependency-name: 'storybook' # ignore storybook updates (should be managed by `npx storybook@latest upgrade`)
+      - dependency-name: '@nx/*' # ignore nx updates (should be managed by `npx nx migrate latest`)
+      - dependency-name: 'nx' # ignore nx updates (should be managed by `npx nx migrate latest`)
     groups:
-      nx:
-        patterns:
-          - 'nx'
-          - '@nx/*'
-      commitlint:
-        patterns:
-          - '@commitlint/*'
-      storybook:
-        patterns:
-          - 'storybook'
-          - '@storybook/*'
-      eslint:
-        patterns:
-          - 'eslint'
-          - '@eslint/*'
-          - 'eslint-plugin-*'
-          - '@typescript-eslint/*'
-      swc:
-        patterns:
-          - 'swc'
-          - '@swc/*'
-      types:
-        patterns:
-          - '@types/*'
-      vite:
-        patterns:
-          - 'vite'
-          - '@vitejs/*'
-          - 'vite-plugin-*'
-          - 'vitest'
-          - '@vitest/*'
-      radix:
-        patterns:
-          - '@radix-ui/*'
+      production-dependencies:
+        dependency-type: 'production'
+      develepmont-dependencies:
+        dependency-type: 'development'
+
+      # * Example patterns if you want to group by package name / scope *
+      # eslint:
+      #   patterns:
+      #     - 'eslint'
+      #     - '@eslint/*'
+      #     - 'eslint-plugin-*'
+      #     - '@typescript-eslint/*'
+      # vite:
+      #   patterns:
+      #     - 'vite'
+      #     - '@vitejs/*'
+      #     - 'vite-plugin-*'
+      #     - 'vitest'
+      #     - '@vitest/*'
