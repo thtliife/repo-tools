@@ -11,7 +11,7 @@
     "postinstall": "git config core.hookspath .githooks"
   },
   "dependencies": {
-    "tslib": "^2.6.1"
+    "tslib": "^2.6.2"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.7.1",
