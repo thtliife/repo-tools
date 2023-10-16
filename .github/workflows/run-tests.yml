@@ -54,7 +54,7 @@ jobs:
           fetch-depth: 0
       # Configure Nx to be able to detect changes between branches when we are in a PR
       - name: Derive appropriate SHAs for base and head for `nx affected` commands
-        uses: nrwl/nx-set-shas@v3
+        uses: nrwl/nx-set-shas@v4
         with:
           main-branch-name: ${{needs.branch-info.outputs.base-branch-name}}
       # Install Pnpm
