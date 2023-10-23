@@ -20,8 +20,8 @@ devDependencies:
     specifier: ^17.8.0
     version: 17.8.0
   '@commitlint/types':
-    specifier: ^17.4.4
-    version: 17.4.4
+    specifier: ^18.0.0
+    version: 18.0.0
   '@nx/eslint-plugin':
     specifier: 16.6.0
     version: 16.6.0(@types/node@20.8.7)(@typescript-eslint/parser@6.8.0)(eslint@8.51.0)(nx@16.6.0)(typescript@5.2.2)
@@ -1934,6 +1934,13 @@ packages:
   /@commitlint/types@17.4.4:
     resolution: {integrity: sha512-amRN8tRLYOsxRr6mTnGGGvB5EmW/4DDjLMgiwK3CCVEmN6Sr/6xePGEpWaspKkckILuUORCwe6VfDBw6uj4axQ==}
     engines: {node: '>=v14'}
+    dependencies:
+      chalk: 4.1.2
+    dev: true
+
+  /@commitlint/types@18.0.0:
+    resolution: {integrity: sha512-FDzAdSm7kIir0NW0bZLENdrEgf/9Ihs1AAqE9DK9R+dRFby4ookkxPMaz7elZmG+e5rBl7hGrWJzJINqG9cDDg==}
+    engines: {node: '>=v18'}
     dependencies:
       chalk: 4.1.2
     dev: true
