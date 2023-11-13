@@ -11,14 +11,14 @@ dependencies:
 
 devDependencies:
   '@commitlint/cli':
-    specifier: ^18.4.0
-    version: 18.4.0(typescript@5.2.2)
+    specifier: ^18.4.1
+    version: 18.4.1(typescript@5.2.2)
   '@commitlint/config-conventional':
     specifier: ^18.4.0
     version: 18.4.0
   '@commitlint/prompt-cli':
-    specifier: ^18.4.0
-    version: 18.4.0(typescript@5.2.2)
+    specifier: ^18.4.1
+    version: 18.4.1(typescript@5.2.2)
   '@commitlint/types':
     specifier: ^18.4.0
     version: 18.4.0
@@ -1743,14 +1743,14 @@ packages:
     dev: true
     optional: true
 
-  /@commitlint/cli@18.4.0(typescript@5.2.2):
-    resolution: {integrity: sha512-iz3KJtmsRRFm6OlyrORxRR6qcrznuoFDzcvMXTMpl6E/wj9Vr2crolDk6cG3bFpJCjWd9C7KidXerRha6hh1kQ==}
+  /@commitlint/cli@18.4.1(typescript@5.2.2):
+    resolution: {integrity: sha512-4+jljfd29Udw9RDDyigavLO9LvdbmB8O9xjDzVZ0R3lJuG7nCeyHgnKWIVpFaN590isZMV/cMeQK0gH7hRF40A==}
     engines: {node: '>=v18'}
     hasBin: true
     dependencies:
       '@commitlint/format': 18.4.0
       '@commitlint/lint': 18.4.0
-      '@commitlint/load': 18.4.0(typescript@5.2.2)
+      '@commitlint/load': 18.4.1(typescript@5.2.2)
       '@commitlint/read': 18.4.0
       '@commitlint/types': 18.4.0
       execa: 5.1.1
@@ -1820,8 +1820,8 @@ packages:
       '@commitlint/types': 18.4.0
     dev: true
 
-  /@commitlint/load@18.4.0(typescript@5.2.2):
-    resolution: {integrity: sha512-7unGl1HGRNMgWrUPmj8OFkJyuNUMb6xA1i53/OAFKd9l+U3C4WTfoJe3t/TUz8vKZLCaDcWWR/b2cw5HveBBFg==}
+  /@commitlint/load@18.4.1(typescript@5.2.2):
+    resolution: {integrity: sha512-o/plBiPJQgbSq/4ipDpsq4HCmURjBAEjr1EO/p2falr3VhwV0WGXTvb8NlihgI8xtSyO6lHvtycrE535GMLQbA==}
     engines: {node: '>=v18'}
     dependencies:
       '@commitlint/config-validator': 18.4.0
@@ -1854,24 +1854,24 @@ packages:
       conventional-commits-parser: 5.0.0
     dev: true
 
-  /@commitlint/prompt-cli@18.4.0(typescript@5.2.2):
-    resolution: {integrity: sha512-TD7DmtYZhdcZ2Kilkrb+uXkgEeD7UGB9gQ1ZTYeGFvsE9eBJe/oA1/m/7p4yeBpBWkoh+0Im5yYBH7FLIdBK5A==}
+  /@commitlint/prompt-cli@18.4.1(typescript@5.2.2):
+    resolution: {integrity: sha512-a1Lb26iEAmb0Cr5xQ3KZioSF+Nset7T73UpGkxPX+M16bdkPBkXJ+9mDrbexOKgLBCLFmpAK7VOZ8cu1BN913A==}
     engines: {node: '>=v18'}
     hasBin: true
     dependencies:
-      '@commitlint/prompt': 18.4.0(typescript@5.2.2)
+      '@commitlint/prompt': 18.4.1(typescript@5.2.2)
       execa: 5.1.1
       inquirer: 6.5.2
     transitivePeerDependencies:
       - typescript
     dev: true
 
-  /@commitlint/prompt@18.4.0(typescript@5.2.2):
-    resolution: {integrity: sha512-LqRWbr8ZCPdVSRfV5Vo6JwQ1JJ82VomixU7jUp/Pe/Q+6Vkb18talI/weTl04nuuAB4uZUI4jn1OxWwtD8J14w==}
+  /@commitlint/prompt@18.4.1(typescript@5.2.2):
+    resolution: {integrity: sha512-L4XzbKsW1/a48UZGP/I5d/hH8CyFzKaaJfiaG8KgQhyxEs4T4OEsj2wWoTg/zM/5SrEqN846DOIFRM4bfAiYQA==}
     engines: {node: '>=v18'}
     dependencies:
       '@commitlint/ensure': 18.4.0
-      '@commitlint/load': 18.4.0(typescript@5.2.2)
+      '@commitlint/load': 18.4.1(typescript@5.2.2)
       '@commitlint/types': 18.4.0
       chalk: 4.1.2
       inquirer: 6.5.2
