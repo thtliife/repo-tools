@@ -20,8 +20,8 @@ devDependencies:
     specifier: ^18.4.2
     version: 18.4.2(typescript@5.2.2)
   '@commitlint/types':
-    specifier: ^18.4.0
-    version: 18.4.0
+    specifier: ^18.4.3
+    version: 18.4.3
   '@nx/eslint-plugin':
     specifier: 16.6.0
     version: 16.6.0(@types/node@20.9.0)(@typescript-eslint/parser@6.11.0)(eslint@8.53.0)(nx@16.6.0)(typescript@5.2.2)
@@ -1752,7 +1752,7 @@ packages:
       '@commitlint/lint': 18.4.2
       '@commitlint/load': 18.4.2(typescript@5.2.2)
       '@commitlint/read': 18.4.0
-      '@commitlint/types': 18.4.0
+      '@commitlint/types': 18.4.3
       execa: 5.1.1
       lodash.isfunction: 3.0.9
       resolve-from: 5.0.0
@@ -1773,7 +1773,7 @@ packages:
     resolution: {integrity: sha512-1y6qHMU3o4cYQSK+Y9EnmH6H1GRiwQGjnLIUOIKlekrmfc8MrMk1ByNmb8od4vK3qHJAaL/77/5n+1uyyIF5dA==}
     engines: {node: '>=v18'}
     dependencies:
-      '@commitlint/types': 18.4.0
+      '@commitlint/types': 18.4.3
       ajv: 8.12.0
     dev: true
 
@@ -1781,7 +1781,7 @@ packages:
     resolution: {integrity: sha512-N5cJo/n61ULSwz3W5Iz/IZJ0I9H/PaHc+OMcF2XcRVbLa6B3YwzEW66XGCRKVULlsBNSrIH6tk5un9ayXAXIdw==}
     engines: {node: '>=v18'}
     dependencies:
-      '@commitlint/types': 18.4.0
+      '@commitlint/types': 18.4.3
       lodash.camelcase: 4.3.0
       lodash.kebabcase: 4.1.1
       lodash.snakecase: 4.1.1
@@ -1798,7 +1798,7 @@ packages:
     resolution: {integrity: sha512-MiAe4D5/ahty38CzULdQbpRa3ReKZtx0kyigOWcntq+N5uqez+Ac4/MO7H+3j1kC4G7nfJVfBu6TqcXeyNvhCQ==}
     engines: {node: '>=v18'}
     dependencies:
-      '@commitlint/types': 18.4.0
+      '@commitlint/types': 18.4.3
       chalk: 4.1.2
     dev: true
 
@@ -1806,7 +1806,7 @@ packages:
     resolution: {integrity: sha512-uujjyJlrXsMsQrv0r8HDGigAwJELPAMtA1Vxi2WUB54HbyAWa0Ue6ujMRZNKov2YeA96r6o72gLDnugb6yu8IA==}
     engines: {node: '>=v18'}
     dependencies:
-      '@commitlint/types': 18.4.0
+      '@commitlint/types': 18.4.3
       semver: 7.5.4
     dev: true
 
@@ -1817,7 +1817,7 @@ packages:
       '@commitlint/is-ignored': 18.4.2
       '@commitlint/parse': 18.4.0
       '@commitlint/rules': 18.4.0
-      '@commitlint/types': 18.4.0
+      '@commitlint/types': 18.4.3
     dev: true
 
   /@commitlint/load@18.4.2(typescript@5.2.2):
@@ -1827,7 +1827,7 @@ packages:
       '@commitlint/config-validator': 18.4.0
       '@commitlint/execute-rule': 18.4.0
       '@commitlint/resolve-extends': 18.4.0
-      '@commitlint/types': 18.4.0
+      '@commitlint/types': 18.4.3
       '@types/node': 18.18.9
       chalk: 4.1.2
       cosmiconfig: 8.3.6(typescript@5.2.2)
@@ -1849,7 +1849,7 @@ packages:
     resolution: {integrity: sha512-SxTCSUZH8CJNYWOlFg18YUQ2RLz8ubXKbpHUIiSNwCbiQx7UDCydp1JnhoB4sOYOxgV8d3nuDwYluRU5KnEY4A==}
     engines: {node: '>=v18'}
     dependencies:
-      '@commitlint/types': 18.4.0
+      '@commitlint/types': 18.4.3
       conventional-changelog-angular: 6.0.0
       conventional-commits-parser: 5.0.0
     dev: true
@@ -1872,7 +1872,7 @@ packages:
     dependencies:
       '@commitlint/ensure': 18.4.0
       '@commitlint/load': 18.4.2(typescript@5.2.2)
-      '@commitlint/types': 18.4.0
+      '@commitlint/types': 18.4.3
       chalk: 4.1.2
       inquirer: 6.5.2
     transitivePeerDependencies:
@@ -1884,7 +1884,7 @@ packages:
     engines: {node: '>=v18'}
     dependencies:
       '@commitlint/top-level': 18.4.0
-      '@commitlint/types': 18.4.0
+      '@commitlint/types': 18.4.3
       fs-extra: 11.1.1
       git-raw-commits: 2.0.11
       minimist: 1.2.8
@@ -1895,7 +1895,7 @@ packages:
     engines: {node: '>=v18'}
     dependencies:
       '@commitlint/config-validator': 18.4.0
-      '@commitlint/types': 18.4.0
+      '@commitlint/types': 18.4.3
       import-fresh: 3.3.0
       lodash.mergewith: 4.6.2
       resolve-from: 5.0.0
@@ -1909,7 +1909,7 @@ packages:
       '@commitlint/ensure': 18.4.0
       '@commitlint/message': 18.4.0
       '@commitlint/to-lines': 18.4.0
-      '@commitlint/types': 18.4.0
+      '@commitlint/types': 18.4.3
       execa: 5.1.1
     dev: true
 
@@ -1925,8 +1925,8 @@ packages:
       find-up: 5.0.0
     dev: true
 
-  /@commitlint/types@18.4.0:
-    resolution: {integrity: sha512-MKeaFxt0I9fhqUb2E+YIzX/gZtmkuodJET/XKiZIMvXUff8Ee4Ih86eLg+yAm2jf1pwGBmU02uNOp0y094w2Uw==}
+  /@commitlint/types@18.4.3:
+    resolution: {integrity: sha512-cvzx+vtY/I2hVBZHCLrpoh+sA0hfuzHwDc+BAFPimYLjJkpHnghQM+z8W/KyLGkygJh3BtI3xXXq+dKjnSWEmA==}
     engines: {node: '>=v18'}
     dependencies:
       chalk: 4.1.2
