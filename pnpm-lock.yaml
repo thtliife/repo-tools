@@ -56,8 +56,8 @@ devDependencies:
     specifier: ^8.44.7
     version: 8.44.7
   '@types/jest':
-    specifier: 29.5.8
-    version: 29.5.8
+    specifier: 29.5.9
+    version: 29.5.9
   '@types/node':
     specifier: 20.9.0
     version: 20.9.0
@@ -2145,7 +2145,7 @@ packages:
       istanbul-lib-source-maps: 4.0.1
       istanbul-reports: 3.1.6
       jest-message-util: 29.7.0
-      jest-util: 29.6.2
+      jest-util: 29.7.0
       jest-worker: 29.7.0
       slash: 3.0.0
       string-length: 4.0.2
@@ -3313,8 +3313,8 @@ packages:
       '@types/istanbul-lib-report': 3.0.3
     dev: true
 
-  /@types/jest@29.5.8:
-    resolution: {integrity: sha512-fXEFTxMV2Co8ZF5aYFJv+YeA08RTYJfhtN5c9JSv/mFEMe+xxjufCb+PHL+bJcMs/ebPUsBu+UNTEz+ydXrR6g==}
+  /@types/jest@29.5.9:
+    resolution: {integrity: sha512-zJeWhqBwVoPm83sP8h1/SVntwWTu5lZbKQGCvBjxQOyEWnKnsaomt2y7SlV4KfwlrHAHHAn00Sh4IAWaIsGOgQ==}
     dependencies:
       expect: 29.7.0
       pretty-format: 29.7.0
@@ -6021,7 +6021,7 @@ packages:
       jest-regex-util: 29.6.3
       jest-resolve: 29.6.2
       jest-runner: 29.7.0
-      jest-util: 29.6.2
+      jest-util: 29.7.0
       jest-validate: 29.7.0
       micromatch: 4.0.5
       parse-json: 5.2.0
@@ -6263,7 +6263,7 @@ packages:
       graceful-fs: 4.2.11
       jest-haste-map: 29.7.0
       jest-pnp-resolver: 1.2.3(jest-resolve@29.6.2)
-      jest-util: 29.6.2
+      jest-util: 29.7.0
       jest-validate: 29.7.0
       resolve: 1.22.4
       resolve.exports: 2.0.2
