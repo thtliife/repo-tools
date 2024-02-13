@@ -11,7 +11,7 @@ updates:
     commit-message:
       prefix: 'chore'
     schedule:
-      interval: 'daily'
+      interval: 'weekly'
     ignore:
       - dependency-name: 'prettier'
         update-types: ['version-update:semver-major'] # ignore major updates until @nrwl/nx adds support for prettier v3
