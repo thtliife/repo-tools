@@ -61,12 +61,12 @@ jobs:
       - name: Install pnpm
         uses: pnpm/action-setup@v3
         with:
-          version: 8.6.12
+          version: latest
       # Install Node.js
       - name: Use Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '18.18.0'
+          node-version: 'latest'
           cache: 'pnpm'
       # Install workspace dependencies
       - name: Install dependencies
@@ -113,7 +113,7 @@ jobs:
       max-parallel: 4
       # One job for each different project and node version
       matrix:
-        node: ['18.18.0', '20.7.0']
+        node: ['latest', '20.7.0']
         projectName: ${{fromJson(needs.get-affected.outputs.test-unit)}}
     env:
       NODE: ${{ matrix.node }}
@@ -124,7 +124,7 @@ jobs:
       - name: Install pnpm
         uses: pnpm/action-setup@v3
         with:
-          version: 8.6.12
+          version: latest
       - name: Use Node.js
         uses: actions/setup-node@v4
         with:
@@ -151,7 +151,7 @@ jobs:
       max-parallel: 4
       # One job for each different project and node version
       matrix:
-        node: ['18.18.0', '20.7.0']
+        node: ['latest', '20.7.0']
         projectName: ${{fromJson(needs.get-affected.outputs.test-e2e)}}
     env:
       NODE: ${{ matrix.node }}
@@ -161,7 +161,7 @@ jobs:
       - name: Install pnpm
         uses: pnpm/action-setup@v3
         with:
-          version: 8.6.12
+          version: latest
       - name: Use Node.js
         uses: actions/setup-node@v4
         with:
@@ -186,7 +186,7 @@ jobs:
     strategy:
       max-parallel: 2
       matrix:
-        node: ['18.18.0', '20.7.0']
+        node: ['latest', '20.7.0']
         projectName: ${{fromJson(needs.get-affected.outputs.test-e2e)}}
     steps:
       - name: Checkout
@@ -194,7 +194,7 @@ jobs:
       - name: Install pnpm
         uses: pnpm/action-setup@v3
         with:
-          version: 8.6.12
+          version: latest
       - name: Use Node.js
         uses: actions/setup-node@v4
         with:
