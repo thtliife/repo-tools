@@ -30,9 +30,9 @@
     "@semantic-release/release-notes-generator": "^12.1.0",
     "@types/eslint": "^8.56.5",
     "@types/jest": "29.5.12",
-    "@types/node": "20.11.24",
-    "@typescript-eslint/eslint-plugin": "^7.1.0",
-    "@typescript-eslint/parser": "^7.1.0",
+    "@types/node": "20.11.25",
+    "@typescript-eslint/eslint-plugin": "^7.1.1",
+    "@typescript-eslint/parser": "^7.1.1",
     "cross-spawn": "^7.0.3",
     "devmoji": "^2.3.0",
     "eslint": "^8.57.0",
@@ -44,6 +44,6 @@
     "semantic-release-plus": "^20.0.0",
     "ts-jest": "29.1.2",
     "ts-node": "10.9.2",
-    "typescript": "5.3.3"
+    "typescript": "5.4.2"
   }
 }
