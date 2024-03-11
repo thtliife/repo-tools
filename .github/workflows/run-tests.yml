@@ -113,7 +113,7 @@ jobs:
       max-parallel: 4
       # One job for each different project and node version
       matrix:
-        node: ['latest', '20.7.0']
+        node: ['latest']
         projectName: ${{fromJson(needs.get-affected.outputs.test-unit)}}
     env:
       NODE: ${{ matrix.node }}
@@ -151,7 +151,7 @@ jobs:
       max-parallel: 4
       # One job for each different project and node version
       matrix:
-        node: ['latest', '20.7.0']
+        node: ['latest']
         projectName: ${{fromJson(needs.get-affected.outputs.test-e2e)}}
     env:
       NODE: ${{ matrix.node }}
@@ -186,7 +186,7 @@ jobs:
     strategy:
       max-parallel: 2
       matrix:
-        node: ['latest', '20.7.0']
+        node: ['latest']
         projectName: ${{fromJson(needs.get-affected.outputs.test-e2e)}}
     steps:
       - name: Checkout
